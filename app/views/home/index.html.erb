@@ -1,0 +1,22 @@
+<h1>Listing Grocery</h1>
+<% if @groceries.present? -%>
+	<table border="1">
+	  <tr>
+	    <th>Name</th>
+	    <th>Description</th>
+	    <th>Price</th>
+	    <th>Add To Cart</th>
+	  </tr>
+
+	  <% @groceries.each do |grocery| %>
+	    <tr>
+	      <td><%= grocery.name %></td>
+	      <td><%= grocery.description %></td>
+	      <td><%= grocery.price %></td>
+              <td><%= link_to "Add To Cart" , add_to_cart_path(:grocery_id => grocery.id), :method => :post %></td>
+	    <tr>
+	  <% end %>
+  	</table>
+<% else -%>
+	<p>No grocery item present now. Check back soon.</p>
+<% end -%>

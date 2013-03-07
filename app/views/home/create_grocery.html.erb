@@ -1,0 +1,11 @@
+<div style="width:400px" >
+<%= form_for :grocery, :url => create_path, :method => :post  do |grocery|-%>
+        <%= grocery.text_field :name, :placeholder => "Name of grocery item", :style => "float:left" %>
+        <br />
+	<%= grocery.text_area :description, :placeholder => "Description of grocery item", :style => "float:left" %>
+        <br />
+	<%= grocery.text_field :price, :placeholder => "Price of grocery item", :style => "float:left" %>
+        <br />
+        <%= grocery.submit 'Submit', :class => 'button green', :style => "float:left" %>
+<% end -%>
+</div>
