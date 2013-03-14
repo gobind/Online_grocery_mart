@@ -7,6 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% flash.each do |type, msg| -%>
+    <div class="ad-notif-<%= type %> "><p><%= raw msg %></p></div>
+  <% end -%>
+
   <div style="float: right;"><%= link_to "Home", root_path %>||<%= link_to "Create new grocery", create_grocery_path %>||<%= link_to "Cart", cart_path %></div>
 <%= yield %>
 

@@ -3,6 +3,7 @@ class CartController < ApplicationController
     @cart = Cart.find_by_id(session['cart_id'])
 
     if @cart.blank?
+      flash[:error] = "Your cart is empty. Please add some items"
       redirect_to home_index_path
       return
     else
