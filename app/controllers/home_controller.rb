@@ -5,6 +5,7 @@ class HomeController < ApplicationController
   end
 
   def create_grocery
+    @title = "Create new grocery"
   end
 
   def create

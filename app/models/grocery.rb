@@ -1,5 +1,5 @@
 class Grocery < ActiveRecord::Base
   attr_accessible :name, :price, :description
-  belongs_to :carts
+  has_many :cart_items
   validates :name, :price, :presence => true
 end

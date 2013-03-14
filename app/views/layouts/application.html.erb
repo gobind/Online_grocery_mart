@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="background-color: rgb(178, 187, 223);">
 <head>
   <title>OnlineGroceryMart</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <div style="float: right;"><%= link_to "Home", root_path %>||<%= link_to "Create new grocery", create_grocery_path %>||<%= link_to "Cart", cart_path %></div>
 <%= yield %>
 
 </body>

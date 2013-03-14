@@ -1,11 +1,17 @@
-<div style="width:400px" >
-<%= form_for :grocery, :url => create_path, :method => :post  do |grocery|-%>
-        <%= grocery.text_field :name, :placeholder => "Name of grocery item", :style => "float:left" %>
-        <br />
-	<%= grocery.text_area :description, :placeholder => "Description of grocery item", :style => "float:left" %>
-        <br />
-	<%= grocery.text_field :price, :placeholder => "Price of grocery item", :style => "float:left" %>
-        <br />
-        <%= grocery.submit 'Submit', :class => 'button green', :style => "float:left" %>
-<% end -%>
+<div style="margin: 0 auto; width: 309px;" >
+  <h1><%= @title %></h1>
+  <%= form_for :grocery, :url => create_path, :method => :post  do |grocery|-%>
+          <%= grocery.text_field :name, :placeholder => "Name of the grocery item", :style => "float:left" %>
+          <br />
+          <br />
+          <%= grocery.text_area :description, :placeholder => "Description of grocery item", :style => "float:left;width: 248px;height: 170px;" %>
+          <br />
+          <br />
+          <br />
+          <br />
+          <%= grocery.text_field :price, :placeholder => "Price of grocery item", :style => "float:left" %>
+          <br />
+          <br />
+          <%= grocery.submit 'Submit', :class => 'button green', :style => "float:left" %>
+  <% end -%>
 </div>

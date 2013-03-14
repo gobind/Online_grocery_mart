@@ -1,11 +1,12 @@
-<h1>Grocery in your cart</h1>
+<div style="margin: 0 auto; width: 309px;">
+<h1>Groceries in your cart</h1>
 <% if @groceries.present? -%>
 	<table border="1">
 	  <tr>
 	    <th>Name</th>
 	    <th>Description</th>
 	    <th>Price</th>
-	    <th>Add To Cart</th>
+	    <th>Quantity</th>
 	  </tr>
 
 	  <% @groceries.each do |grocery| %>
@@ -13,17 +14,22 @@
 	      <td><%= grocery.name %></td>
 	      <td><%= grocery.description %></td>
 	      <td><%= grocery.price %></td>
-              <td><%= link_to "Add To Cart" , add_to_cart_path(:grocery_id => grocery.id), :method => :post %></td>
+	      <td><%= grocery.quantity %></td>
 	    <tr>
 	   <% end %>
   	</table>
 <% else -%>
 	<p>No grocery item present now. Check back soon.</p>
 <% end -%>
+        <br \>
 <div>
-	<%= form_for @cart, :url => :checkout_path do |f| %>
+	<%= form_for @cart, :url => checkout_path do |f| %>
 		<%= f.text_field :customer_name, :placeholder => "Your Name"  %>
 		<%= f.text_field :customer_email, :placeholder => "Your Email"  %>
 		<%= f.submit "Checkout" %>
-	<% end %>
+                <%= hidden_field_tag :cart_id, @cart.id %>
+        <% end %>
+        <br \>
+        <%= link_to "Add more items to you cart", root_path %>
+</div>
 </div>
