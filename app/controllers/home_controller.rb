@@ -12,10 +12,11 @@ class HomeController < ApplicationController
     @grocery = Grocery.new(params[:grocery])
     if @grocery.save
       flash[:notice] = "Grocery item created"
+      redirect_to root_path
     else
       flash[:error] = @grocery.errors.full_messages.join('<br />')
+      render :create_grocery
     end
 
-    redirect_to root_path
   end
 end

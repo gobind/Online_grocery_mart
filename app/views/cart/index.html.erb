@@ -24,8 +24,8 @@
         <br \>
 <div>
 	<%= form_for @cart, :url => checkout_path do |f| %>
-		<%= f.text_field :customer_name, :placeholder => "Your Name"  %>
-		<%= f.text_field :customer_email, :placeholder => "Your Email"  %>
+		<%= f.text_field :customer_name, :placeholder => "Your Name(required)"  %>
+		<%= f.text_field :customer_email, :placeholder => "Your Email(required)"  %>
 		<%= f.submit "Checkout" %>
                 <%= hidden_field_tag :cart_id, @cart.id %>
         <% end %>
